@@ -19,6 +19,7 @@ app.get('/mapImage', function(req, res) {
         .pipe(fs.createWriteStream(filePath, {flags: 'a'}))
         .on('finish',_ => console.log('Successfull :D'))
         .on('error',err => console.error('Failed :3'));
+    res.json('Map image create successfully');
 })
 
 app.get('/geocoding/:address', function(req, res) {
